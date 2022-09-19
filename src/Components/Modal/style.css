@@ -1,0 +1,35 @@
+.backdrop {
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.041);
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    gap: 24px;
+    width: 692px;
+    height: 706px;
+    background: #FFFFFF; 
+    box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.modal-header {
+    padding: 10px 20px;
+    border-bottom: 1px solid black;
+
+}
+
+.modal-body {
+    padding: 10px 20px;
+
+}

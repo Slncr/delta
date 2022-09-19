@@ -1,38 +1,156 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background: #E5E5E5;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  height: 190000px;
 }
 
-.App-link {
-  color: #61dafb;
+
+.App__header{
+  position: absolute;
+  width: 1358px;
+  height: 256px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Header__content {
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px 0px 4px;
+gap: 24px;
+
+width: 812px;
+height: 42px;
+flex: none;
+order: 1;
+flex-grow: 1;
+}
+
+.Header__title {
+  width: 569px;
+height: 32px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 32px;
+color: #111827;
+flex: none;
+order: 0;
+flex-grow: 1;
+}
+
+.Background__i {
+  position: absolute;
+  height: 192px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  background: url(https://img1.fonwall.ru/o/vy/wallpaper-anime-landscape-sunset-plants-field.jpeg);
+  border-radius: 10px;
+}
+
+
+
+
+.Content {
+  display: flex;
+flex-direction: row;
+align-items: flex-end;
+padding: 0px 32px;
+gap: 20px;
+
+position: absolute;
+width: 1024px;
+height: 128px;
+left: calc(50% - 1024px/2);
+top: 128px;
+}
+.Avatar {
+  width: 128px;
+height: 128px;
+box-shadow: 0px 0px 0px 4px #FFFFFF;
+border-radius: 64px;
+flex: none;
+order: 0;
+flex-grow: 0;
+background: url(https://avatars.mds.yandex.net/get-kino-vod-films-gallery/28788/47e2fd514411e18b76af786d7417062d/100x64_3);
+}
+
+
+
+.content__items {
+  display: flex;
+  flex-direction: row;
+  align-items:flex-end;
+  align-self: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 358px;
+  border-radius: 20px;
+  height: 216px;
+  box-sizing: border-box;
   }
-  to {
-    transform: rotate(360deg);
+
+.Image__id {
+width: 431.33px;
+height: 216px;
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 1;
+
   }
+  
+  .intro {
+    background: #E5E5E5;
+    display: flex;
+    border-radius: 10px;
+    margin-top: 256px;
+    max-width: 1358px;
+    width: 1358px;
+  }
+
+  .intro__raw {
+    background-color: rgb(133, 113, 114);
+    display: flex;
+    border-radius: 10px;
+    max-width: 1358px;
+    width: 1358px;
+  }
+
+  .Menu {
+  display: flex;
+cursor: pointer;
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 9px 17px 9px 13px;
+gap: 8px;
+width: 119px;
+height: 38px;
+background: #FFFFFF;
+border: 1px solid #D1D5DB;
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+border-radius: 6px;
+flex: none;
+order: 0;
+flex-grow: 0;
+  }
+
+.Container {
+display: flex;
+flex-direction: row;
+align-items: flex-end;
+padding: 0px;
+gap: 32px;
+position: relative;
+width: 1358px;
+height: 520px;
+flex-wrap: nowrap;
+justify-content: space-around;
 }
