@@ -1,14 +1,23 @@
-import React from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import './App.css';
-import ImagesBlock from './Components/ImagesBlock'
-import Header from './Components/Header';
-import ModalProvider from './Context/ModalContext/ModalContextProvider';
-import { Controls } from './Components';
-
-
+import {Modal, Header, ImagesBlock} from './Components'
 
 function App() {
-const [items, setItems] = React.useState([])
+    const [items, setItems] = React.useState([])
+  const [modal, setModal] = useState({isOpen: false, content: ''})
+
+  const setModalImage = useCallback((imgSrc) => {
+    console.log('ok')
+    setModal(prev => ({...prev, isOpen: true, content: imgSrc}))
+}, [])
+
+    const onModalClose = () => {
+      setModal(prev => ({...prev, isOpen: false, content: ''}))
+    }
+
+    useEffect(() => {
+        console.log(modal)
+    }, [modal])
 
 React.useEffect(() => {
   try {
@@ -25,19 +34,18 @@ React.useEffect(() => {
 
 
   return (
-    <ModalProvider>
-     
     <div className="App">
       <Header />
       <div className="wrapper">
-      <div className='intro'> {items.map((obj) => (  
-      <ImagesBlock key={obj.id} imageId={obj.id} imageUrl={obj.url} /> ))}
-      <Controls />
-        </div>
-        </div>
-        
-    </div>
-    </ModalProvider>
+      <div className='intro'>
+        {items.map((obj) => (
+        <ImagesBlock key={obj.id} openModal={setModalImage} imageId={obj.id} imageUrl={obj.url} />
+        ))}
+      </div>
+      <Modal onClose={onModalClose} isModalOpen={modal.isOpen} content={modal.content}/>
+
+      </div></div>
+
   );
 }
 

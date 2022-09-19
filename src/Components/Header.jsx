@@ -1,4 +1,4 @@
-function Header() {
+export const Header = () => {
     return (
         <div className="App__header">
             <div className="Background__i">
@@ -17,5 +17,3 @@ function Header() {
     </div>
     )
 }
-
-export default Header

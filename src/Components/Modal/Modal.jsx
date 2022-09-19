@@ -1,33 +1,18 @@
-import React, { useContext, useState } from "react";
+import React, {useCallback, useState} from "react";
 
 import "./style.css";
-import { ModalContext } from "../../Context";
 
-export const Modal = (props) => {
-    const { children, title } = props;
-    const { closeModal } = useContext(ModalContext);
+export const Modal = ({isModalOpen, content, onClose, onOpen}) => {
 
-    const [closing, setClosing] = useState(false);
 
-    const handleClose = () => {
-        setClosing(true);
-
-        const closeTimeout = setTimeout(() => {
-            closeModal();
-            clearTimeout(closeTimeout);
-        }, 300)    
-    }
-
-    const backdropClasses = closing ? 'backdrop backdrop-hide' : 'backdrop';
+    const backdropClasses = !isModalOpen ? 'backdrop-hide' : '' ;
 
     return (
-        <div className={backdropClasses} onClick={handleClose}>
-            <div className="modal" onClick={(event) => event.stopPropagation()}>
-                <div className="modal-header">
-                    <h3>{title}</h3>
-                </div>
+        <div className={`backdrop ${backdropClasses}`}>
+            <div className="modal">
+                <button onClick={onClose}>krestic</button>
                 <div className="modal-body">
-                    {children}
+                    <img height={200} width={300} src={content} alt=""/>
                 </div>
             </div>
         </div>

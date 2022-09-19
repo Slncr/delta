@@ -1,24 +1,24 @@
-import React from "react"
+import React, {useCallback} from "react"
 
 
-function ImagesBlock({imageId, imageUrl}) {
+export const ImagesBlock = ({imageId, imageUrl, openModal}) => {
+
+    const openModalWithContent = useCallback(() => {
+        openModal(imageUrl)
+    }, [imageUrl, openModal])
     
     return (
         <div className="Container">
-        <div className="content__items">
-            <img 
-            className="content__items"
-            src={imageUrl}
-            alt="img"
-            
-            />
-            
-            <h4 className="image__id">{imageId}</h4>
-        </div>
+            <div className="content__items">
+                <img
+                className="content__items"
+                src={imageUrl}
+                alt="img"
+                onClick={openModalWithContent}
+                />
+
+                <h4 className="image__id">{imageId}</h4>
+            </div>
         </div>
     )
-} 
-
-
-
-export default ImagesBlock
+}
